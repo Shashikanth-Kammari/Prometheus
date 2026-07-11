@@ -34,6 +34,12 @@ VALIDATE $? "Moving to opt directory"
 rm -rf prometheus*
 VALIDATE $? "removed existing prometheus"
 
+sudo dnf install wget -y
+VALIDATE $? "deownloading wget command"
+
+sudo dnf install net-tools -y
+VALIDATE $? "deownloading netstat command"
+
 wget https://github.com/prometheus/prometheus/releases/download/v2.54.0-rc.0/prometheus-2.54.0-rc.0.linux-amd64.tar.gz &>>$LOGFILE
 
 tar -xf prometheus-2.54.0-rc.0.linux-amd64.tar.gz  &>>$LOGFILE
