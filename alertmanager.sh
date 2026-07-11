@@ -37,6 +37,9 @@ VALIDATE $? "removed existing alertmanager"
 sudo dnf install wget -y
 VALIDATE $? "deownloading wget command"
 
+sudo dnf install net-tools -y
+VALIDATE $? "deownloading netstat command"
+
 wget https://github.com/prometheus/alertmanager/releases/download/v0.27.0/alertmanager-0.27.0.linux-amd64.tar.gz &>>$LOGFILE
 VALIDATE $? "Downloading alert manager" 
 
